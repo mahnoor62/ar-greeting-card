@@ -1414,8 +1414,8 @@
             ShowError("Failed to start the experience. Camera permission was denied");
             window.requestingForPermissions = false;
         }
+        forceRedraw();  // i shifted function from outside to here
     }
-    forceRedraw();
     function StopWebcam() {
         console.log("stopping camera");
         window.webcamStream.getTracks().forEach(track => track.stop());
