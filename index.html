@@ -1,0 +1,1579 @@
+<!--&lt;!&ndash;<!DOCTYPE html>&ndash;&gt;-->
+<!--&lt;!&ndash;<html lang="en-us">&ndash;&gt;-->
+<!--&lt;!&ndash;<head>&ndash;&gt;-->
+<!--&lt;!&ndash;    <meta charset="utf-8">&ndash;&gt;-->
+<!--&lt;!&ndash;    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">&ndash;&gt;-->
+<!--&lt;!&ndash;    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">&ndash;&gt;-->
+<!--&lt;!&ndash;    <title>Unity WebGL Player | My project</title>&ndash;&gt;-->
+<!--&lt;!&ndash;    <link rel="shortcut icon" href="TemplateData/favicon.ico">&ndash;&gt;-->
+<!--&lt;!&ndash;    <link rel="stylesheet" href="TemplateData/style.css">&ndash;&gt;-->
+<!--&lt;!&ndash;    <link rel="manifest" href="manifest.webmanifest">&ndash;&gt;-->
+<!--&lt;!&ndash;    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">&ndash;&gt;-->
+<!--&lt;!&ndash;    <style>&ndash;&gt;-->
+<!--&lt;!&ndash;        body {&ndash;&gt;-->
+<!--&lt;!&ndash;            font-family: 'Roboto', sans-serif;&ndash;&gt;-->
+<!--&lt;!&ndash;            letter-spacing: 0.05em;&ndash;&gt;-->
+<!--&lt;!&ndash;            font-size: max(2vw, 2vh);&ndash;&gt;-->
+<!--&lt;!&ndash;            color: white&ndash;&gt;-->
+<!--&lt;!&ndash;        }&ndash;&gt;-->
+
+<!--&lt;!&ndash;        button {&ndash;&gt;-->
+<!--&lt;!&ndash;            height: max(5vw, 5vh);&ndash;&gt;-->
+<!--&lt;!&ndash;            font-size: max(2vw, 2vh);&ndash;&gt;-->
+<!--&lt;!&ndash;            font-weight: bold;&ndash;&gt;-->
+<!--&lt;!&ndash;            border-radius: max(1.5vw, 1.5vh);&ndash;&gt;-->
+<!--&lt;!&ndash;            padding-left: max(5vw, 5vh);&ndash;&gt;-->
+<!--&lt;!&ndash;            padding-right: max(5vw, 5vh);&ndash;&gt;-->
+<!--&lt;!&ndash;            border: 0;&ndash;&gt;-->
+<!--&lt;!&ndash;            color: #62a7fe;&ndash;&gt;-->
+<!--&lt;!&ndash;            background: #3d3d3d;&ndash;&gt;-->
+<!--&lt;!&ndash;            transition: 0.1s;&ndash;&gt;-->
+<!--&lt;!&ndash;            user-select: none;&ndash;&gt;-->
+<!--&lt;!&ndash;            -webkit-user-select: none;&ndash;&gt;-->
+<!--&lt;!&ndash;            -moz-user-select: none;&ndash;&gt;-->
+<!--&lt;!&ndash;            -ms-user-select: none;&ndash;&gt;-->
+<!--&lt;!&ndash;        }&ndash;&gt;-->
+
+<!--&lt;!&ndash;        button:hover {&ndash;&gt;-->
+<!--&lt;!&ndash;            filter: brightness(1.15)&ndash;&gt;-->
+<!--&lt;!&ndash;        }&ndash;&gt;-->
+
+<!--&lt;!&ndash;        button:active {&ndash;&gt;-->
+<!--&lt;!&ndash;            transform: scale(0.95);&ndash;&gt;-->
+<!--&lt;!&ndash;            filter: brightness(0.85)&ndash;&gt;-->
+<!--&lt;!&ndash;        }&ndash;&gt;-->
+
+<!--&lt;!&ndash;        .ctaDiv {&ndash;&gt;-->
+<!--&lt;!&ndash;            display: flex;&ndash;&gt;-->
+<!--&lt;!&ndash;            flex-direction: column;&ndash;&gt;-->
+<!--&lt;!&ndash;            align-items: center;&ndash;&gt;-->
+<!--&lt;!&ndash;            justify-content: center;&ndash;&gt;-->
+<!--&lt;!&ndash;            position: absolute;&ndash;&gt;-->
+<!--&lt;!&ndash;            left: 0;&ndash;&gt;-->
+<!--&lt;!&ndash;            right: 0;&ndash;&gt;-->
+<!--&lt;!&ndash;            top: 0;&ndash;&gt;-->
+<!--&lt;!&ndash;            bottom: 0;&ndash;&gt;-->
+<!--&lt;!&ndash;            background: #2f2e32aa;&ndash;&gt;-->
+<!--&lt;!&ndash;            z-index: 99;&ndash;&gt;-->
+<!--&lt;!&ndash;            transition: 0.5s;&ndash;&gt;-->
+<!--&lt;!&ndash;        }&ndash;&gt;-->
+<!--&lt;!&ndash;    </style>&ndash;&gt;-->
+<!--&lt;!&ndash;</head>&ndash;&gt;-->
+<!--&lt;!&ndash;<body>&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;IMAGETARGETS&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;<imagetarget id='bear' src='targets/bear.png'></imagetarget>&ndash;&gt;-->
+<!--&lt;!&ndash;<imagetarget id='bfly' src='targets/bfly.png'></imagetarget>&ndash;&gt;-->
+<!--&lt;!&ndash;<imagetarget id='flower' src='targets/flower.png'></imagetarget>&ndash;&gt;-->
+<!--&lt;!&ndash;<imagetarget id='lady' src='targets/lady.png'></imagetarget>&ndash;&gt;-->
+<!--&lt;!&ndash;<imagetarget id='reel' src='targets/reel.png'></imagetarget>&ndash;&gt;-->
+<!--&lt;!&ndash;<imagetarget id='rmn' src='targets/rmn.png'></imagetarget>&ndash;&gt;-->
+<!--&lt;!&ndash;<imagetarget id='goku-amoled-super-3840x2160-12116' src='targets/goku-amoled-super-3840x2160-12116.png'></imagetarget>&ndash;&gt;-->
+<!--&lt;!&ndash;<imagetarget id='goku' src='targets/goku.png'></imagetarget>&ndash;&gt;-->
+<!--&lt;!&ndash;<imagetarget id='cardInside' src='targets/inside right.png'></imagetarget>&ndash;&gt;-->
+<!--&lt;!&ndash;<imagetarget id='frontEmpty' src='targets/front empty.png'></imagetarget>&ndash;&gt;-->
+
+<!--&lt;!&ndash;<video id="webcam-video" muted autoplay playsinline style="width:1px;position:absolute"></video>&ndash;&gt;-->
+<!--&lt;!&ndash;<canvas id="video-canvas" style="width:100%; height:100%; object-fit:cover; position:absolute"></canvas>&ndash;&gt;-->
+<!--&lt;!&ndash;<div id="startARDiv" class="ctaDiv" style="background: #2f2e32">&ndash;&gt;-->
+<!--&lt;!&ndash;    <select id="chooseCamSel"&ndash;&gt;-->
+<!--&lt;!&ndash;            style="visibility: hidden; background: transparent; border: .05vh solid white; border-radius: max(0.5vw, 0.5vh); color:white; font-size: max(1.5vw, 1.5vh); position: absolute; bottom: 80px"&ndash;&gt;-->
+<!--&lt;!&ndash;            onchange="SelectCam()"></select>&ndash;&gt;-->
+<!--&lt;!&ndash;    <p style="text-align: center; width:min(60vw, 60vh);">This augmented reality experience requires access to your&ndash;&gt;-->
+<!--&lt;!&ndash;        device's camera</p>&ndash;&gt;-->
+<!--&lt;!&ndash;    <button id="startARButton" onclick="StartAR()" style="visibility: hidden">ALLOW ACCESS</button>&ndash;&gt;-->
+<!--&lt;!&ndash;    <br><br><br>&ndash;&gt;-->
+<!--&lt;!&ndash;</div>&ndash;&gt;-->
+<!--&lt;!&ndash;<div id="screenshotDiv" style="visibility: hidden; opacity: 0;" class="ctaDiv">&ndash;&gt;-->
+<!--&lt;!&ndash;    <div style="position:relative; background-color:#2c2b2f; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.25); border-radius: max(1.5vh, 1.5vw); text-align: center; overflow: hidden">&ndash;&gt;-->
+<!--&lt;!&ndash;        <img id="screenshotImg" src="" alt="screenshot" style="width:80vw; height:80vh">&ndash;&gt;-->
+<!--&lt;!&ndash;        <button onclick="HideScreenshot()"&ndash;&gt;-->
+<!--&lt;!&ndash;                style="position:absolute;right: max(1vw, 1vh);top: max(1vw, 1vh);background: #3d3d3d77; width: max(4vw, 4vh); height: max(4vw, 4vh);padding: 0;border-radius: 100vw; display: flex;align-items: center;justify-content: center;">&ndash;&gt;-->
+<!--&lt;!&ndash;            <svg width="max(2.5vw,2.5vh)" height="max(2.5vw,2.5vh)" viewBox="0 0 24 24">&ndash;&gt;-->
+<!--&lt;!&ndash;                <line x1="3" y1="3" x2="21" y2="21" stroke="#999" stroke-width="2.5"></line>&ndash;&gt;-->
+<!--&lt;!&ndash;                <line x1="3" y1="21" x2="21" y2="3" stroke="#999" stroke-width="2.5"></line>&ndash;&gt;-->
+<!--&lt;!&ndash;            </svg>&ndash;&gt;-->
+<!--&lt;!&ndash;        </button>&ndash;&gt;-->
+<!--&lt;!&ndash;        <p style="font-size: max(1vw, 1vh); color: #fff6">Press and hold to save or share this screenshot</p>&ndash;&gt;-->
+<!--&lt;!&ndash;    </div>&ndash;&gt;-->
+<!--&lt;!&ndash;</div>&ndash;&gt;-->
+<!--&lt;!&ndash;<div id="confirmUrlDiv" style="visibility: hidden; opacity: 0;" class="ctaDiv">&ndash;&gt;-->
+<!--&lt;!&ndash;    <div style="position:relative; background-color:#2c2b2f; padding:10px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.25); width: min(80vw,80vh); display:flex; flex-direction: column; align-items: center; border-radius: 1.5vh;&ndash;&gt;-->
+<!--&lt;!&ndash;">&ndash;&gt;-->
+<!--&lt;!&ndash;        <p id="confirmUrlText" style="text-align: center; width:80%; overflow: hidden; text-overflow: ellipsis;">Are you&ndash;&gt;-->
+<!--&lt;!&ndash;            sure you want to visit url.com?</p>&ndash;&gt;-->
+<!--&lt;!&ndash;        <div style="width: 100%">&ndash;&gt;-->
+<!--&lt;!&ndash;            <button style="width: 100%; margin-bottom: 15px;"&ndash;&gt;-->
+<!--&lt;!&ndash;                    onclick="window.open(newUrlString, '_blank').focus(); HideConfirmUrl()">VISIT SITE&ndash;&gt;-->
+<!--&lt;!&ndash;            </button>&ndash;&gt;-->
+<!--&lt;!&ndash;            <button style="width: 100%" onclick="HideConfirmUrl()">GO BACK</button>&ndash;&gt;-->
+<!--&lt;!&ndash;        </div>&ndash;&gt;-->
+<!--&lt;!&ndash;    </div>&ndash;&gt;-->
+<!--&lt;!&ndash;</div>&ndash;&gt;-->
+<!--&lt;!&ndash;<div id="errorDiv" class="ctaDiv" style="visibility: hidden; opacity: 0; background-color:#2c2b2f">&ndash;&gt;-->
+<!--&lt;!&ndash;    <p id="errorText" style="text-align: center; width:60vw; color:#7f3f3f; font-size: max(3vw, 3vh);"></p>&ndash;&gt;-->
+<!--&lt;!&ndash;</div>&ndash;&gt;-->
+<!--&lt;!&ndash;<div id="unity-container">&ndash;&gt;-->
+<!--&lt;!&ndash;    <canvas id="unity-canvas" width=1920 height=1080 tabindex="-1"></canvas>&ndash;&gt;-->
+<!--&lt;!&ndash;    <div id="unity-loading-bar">&ndash;&gt;-->
+<!--&lt;!&ndash;        <div id="unity-logo"></div>&ndash;&gt;-->
+<!--&lt;!&ndash;        <div id="unity-progress-bar-empty">&ndash;&gt;-->
+<!--&lt;!&ndash;            <div id="unity-progress-bar-full"></div>&ndash;&gt;-->
+<!--&lt;!&ndash;        </div>&ndash;&gt;-->
+<!--&lt;!&ndash;    </div>&ndash;&gt;-->
+<!--&lt;!&ndash;    <div id="unity-warning"></div>&ndash;&gt;-->
+<!--&lt;!&ndash;</div>&ndash;&gt;-->
+<!--&lt;!&ndash;<script src="arcamera.js" type="text/javascript"></script>&ndash;&gt;-->
+<!--&lt;!&ndash;<script src="itracker.js" type="text/javascript"></script>&ndash;&gt;-->
+<!--&lt;!&ndash;<script>&ndash;&gt;-->
+<!--&lt;!&ndash;    // Disable double-tap to zoom&ndash;&gt;-->
+<!--&lt;!&ndash;    document.addEventListener('touchstart', function (event) {&ndash;&gt;-->
+<!--&lt;!&ndash;        if (event.touches.length > 1) {&ndash;&gt;-->
+<!--&lt;!&ndash;            event.preventDefault();&ndash;&gt;-->
+<!--&lt;!&ndash;        }&ndash;&gt;-->
+<!--&lt;!&ndash;    }, {passive: false});&ndash;&gt;-->
+<!--&lt;!&ndash;    // Disable pinch to zoom&ndash;&gt;-->
+<!--&lt;!&ndash;    document.addEventListener('gesturestart', function (event) {&ndash;&gt;-->
+<!--&lt;!&ndash;        event.preventDefault();&ndash;&gt;-->
+<!--&lt;!&ndash;    });&ndash;&gt;-->
+<!--&lt;!&ndash;    var initialize = async () => {&ndash;&gt;-->
+<!--&lt;!&ndash;        var unityCanvas = document.querySelector("#unity-canvas");&ndash;&gt;-->
+<!--&lt;!&ndash;        var videoCanvas = document.querySelector("#video-canvas");&ndash;&gt;-->
+<!--&lt;!&ndash;        window.arCamera = new ARCamera(unityCanvas, videoCanvas);&ndash;&gt;-->
+<!--&lt;!&ndash;        window.iTracker = new ImageTracker(arCamera);&ndash;&gt;-->
+<!--&lt;!&ndash;        try {&ndash;&gt;-->
+<!--&lt;!&ndash;            await window.iTracker.initialize("./opencv.js");&ndash;&gt;-->
+<!--&lt;!&ndash;            console.log("ImageTracker initialized!");&ndash;&gt;-->
+<!--&lt;!&ndash;        } catch {&ndash;&gt;-->
+<!--&lt;!&ndash;            console.error("Failed to initialize ImageTracker. Are you missing opencv.js? " + error);&ndash;&gt;-->
+<!--&lt;!&ndash;            ShowError("Failed to initialize the experience.");&ndash;&gt;-->
+<!--&lt;!&ndash;            return;&ndash;&gt;-->
+<!--&lt;!&ndash;        }&ndash;&gt;-->
+<!--&lt;!&ndash;        await LoadWebcams();&ndash;&gt;-->
+<!--&lt;!&ndash;        document.getElementById("startARButton").style.visibility = "visible";&ndash;&gt;-->
+<!--&lt;!&ndash;        window.permissionsGranted = IsCameraPermissionGranted();&ndash;&gt;-->
+<!--&lt;!&ndash;    }&ndash;&gt;-->
+<!--&lt;!&ndash;    initialize();&ndash;&gt;-->
+<!--&lt;!&ndash;    window.addEventListener("load", function () {&ndash;&gt;-->
+<!--&lt;!&ndash;        if ("serviceWorker" in navigator) {&ndash;&gt;-->
+<!--&lt;!&ndash;            navigator.serviceWorker.register("ServiceWorker.js");&ndash;&gt;-->
+<!--&lt;!&ndash;        }&ndash;&gt;-->
+<!--&lt;!&ndash;    });&ndash;&gt;-->
+
+<!--&lt;!&ndash;    var instanceObj;&ndash;&gt;-->
+<!--&lt;!&ndash;    var container = document.querySelector("#unity-container");&ndash;&gt;-->
+<!--&lt;!&ndash;    var canvas = document.querySelector("#unity-canvas");&ndash;&gt;-->
+<!--&lt;!&ndash;    var loadingBar = document.querySelector("#unity-loading-bar");&ndash;&gt;-->
+<!--&lt;!&ndash;    var progressBarFull = document.querySelector("#unity-progress-bar-full");&ndash;&gt;-->
+<!--&lt;!&ndash;    var warningBanner = document.querySelector("#unity-warning");&ndash;&gt;-->
+<!--&lt;!&ndash;    // Shows a temporary message banner/ribbon for a few seconds, or&ndash;&gt;-->
+<!--&lt;!&ndash;    // a permanent error message on top of the canvas if type=='error'.&ndash;&gt;-->
+<!--&lt;!&ndash;    // If type=='warning', a yellow highlight color is used.&ndash;&gt;-->
+<!--&lt;!&ndash;    // Modify or remove this function to customize the visually presented&ndash;&gt;-->
+<!--&lt;!&ndash;    // way that non-critical warnings and error messages are presented to the&ndash;&gt;-->
+<!--&lt;!&ndash;    // user.&ndash;&gt;-->
+<!--&lt;!&ndash;    function unityShowBanner(msg, type) {&ndash;&gt;-->
+<!--&lt;!&ndash;        function updateBannerVisibility() {&ndash;&gt;-->
+<!--&lt;!&ndash;            warningBanner.style.display = warningBanner.children.length ? 'block' : 'none';&ndash;&gt;-->
+<!--&lt;!&ndash;        }&ndash;&gt;-->
+
+<!--&lt;!&ndash;        var div = document.createElement('div');&ndash;&gt;-->
+<!--&lt;!&ndash;        div.innerHTML = msg;&ndash;&gt;-->
+<!--&lt;!&ndash;        warningBanner.appendChild(div);&ndash;&gt;-->
+<!--&lt;!&ndash;        if (type == 'error') div.style = 'background: red; padding: 10px;';&ndash;&gt;-->
+<!--&lt;!&ndash;        else {&ndash;&gt;-->
+<!--&lt;!&ndash;            if (type == 'warning') div.style = 'background: yellow; padding: 10px;';&ndash;&gt;-->
+<!--&lt;!&ndash;            setTimeout(function () {&ndash;&gt;-->
+<!--&lt;!&ndash;                warningBanner.removeChild(div);&ndash;&gt;-->
+<!--&lt;!&ndash;                updateBannerVisibility();&ndash;&gt;-->
+<!--&lt;!&ndash;            }, 5000);&ndash;&gt;-->
+<!--&lt;!&ndash;        }&ndash;&gt;-->
+<!--&lt;!&ndash;        updateBannerVisibility();&ndash;&gt;-->
+<!--&lt;!&ndash;    }&ndash;&gt;-->
+<!--&lt;!&ndash;    function extractUserIdFromUrl() {&ndash;&gt;-->
+<!--&lt;!&ndash;        const pathParts = window.location.pathname.split("/").filter(Boolean);&ndash;&gt;-->
+<!--&lt;!&ndash;        // Get the last segment (assumed to be the ID)&ndash;&gt;-->
+<!--&lt;!&ndash;        const idFromPath = pathParts[pathParts.length - 1];&ndash;&gt;-->
+<!--&lt;!&ndash;        return idFromPath || null;&ndash;&gt;-->
+<!--&lt;!&ndash;    }&ndash;&gt;-->
+
+
+<!--&lt;!&ndash;    function StartAR() {&ndash;&gt;-->
+<!--&lt;!&ndash;        var startARDiv = document.querySelector("#startARDiv");&ndash;&gt;-->
+<!--&lt;!&ndash;        startARDiv.style.opacity = 0;&ndash;&gt;-->
+<!--&lt;!&ndash;        setTimeout(() => {&ndash;&gt;-->
+<!--&lt;!&ndash;            startARDiv.style.visibility = "hidden";&ndash;&gt;-->
+<!--&lt;!&ndash;        }, 500);&ndash;&gt;-->
+<!--&lt;!&ndash;        var buildUrl = "Build";&ndash;&gt;-->
+<!--&lt;!&ndash;        var loaderUrl = buildUrl + "/Ar Build.loader.js";&ndash;&gt;-->
+<!--&lt;!&ndash;        var config = {&ndash;&gt;-->
+<!--&lt;!&ndash;            dataUrl: buildUrl + "/Ar Build.data",&ndash;&gt;-->
+<!--&lt;!&ndash;            frameworkUrl: buildUrl + "/Ar Build.framework.js",&ndash;&gt;-->
+<!--&lt;!&ndash;            codeUrl: buildUrl + "/Ar Build.wasm",&ndash;&gt;-->
+<!--&lt;!&ndash;            streamingAssetsUrl: "StreamingAssets",&ndash;&gt;-->
+<!--&lt;!&ndash;            companyName: "DefaultCompany",&ndash;&gt;-->
+<!--&lt;!&ndash;            productName: "My project",&ndash;&gt;-->
+<!--&lt;!&ndash;            productVersion: "1.0.0",&ndash;&gt;-->
+<!--&lt;!&ndash;            showBanner: unityShowBanner,&ndash;&gt;-->
+<!--&lt;!&ndash;        };&ndash;&gt;-->
+<!--&lt;!&ndash;        // By default Unity keeps WebGL canvas render target size matched with&ndash;&gt;-->
+<!--&lt;!&ndash;        // the DOM size of the canvas element (scaled by window.devicePixelRatio)&ndash;&gt;-->
+<!--&lt;!&ndash;        // Set this to false if you want to decouple this synchronization from&ndash;&gt;-->
+<!--&lt;!&ndash;        // happening inside the engine, and you would instead like to size up&ndash;&gt;-->
+<!--&lt;!&ndash;        // the canvas DOM size and WebGL render target sizes yourself.&ndash;&gt;-->
+<!--&lt;!&ndash;        // config.matchWebGLToCanvasSize = false;&ndash;&gt;-->
+<!--&lt;!&ndash;        if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {&ndash;&gt;-->
+<!--&lt;!&ndash;            // Mobile device style: fill the whole browser client area with the game canvas:&ndash;&gt;-->
+<!--&lt;!&ndash;            var meta = document.createElement('meta');&ndash;&gt;-->
+<!--&lt;!&ndash;            meta.name = 'viewport';&ndash;&gt;-->
+<!--&lt;!&ndash;            meta.content = 'width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, shrink-to-fit=yes';&ndash;&gt;-->
+<!--&lt;!&ndash;            document.getElementsByTagName('head')[0].appendChild(meta);&ndash;&gt;-->
+<!--&lt;!&ndash;        }&ndash;&gt;-->
+<!--&lt;!&ndash;        loadingBar.style.display = "block";&ndash;&gt;-->
+
+<!--&lt;!&ndash;        const userArExperienceId = extractUserIdFromUrl();&ndash;&gt;-->
+
+<!--&lt;!&ndash;        var script = document.createElement("script");&ndash;&gt;-->
+<!--&lt;!&ndash;        script.src = loaderUrl;&ndash;&gt;-->
+<!--&lt;!&ndash;        script.onload = () => {&ndash;&gt;-->
+<!--&lt;!&ndash;            createUnityInstance(canvas, config, (progress) => {&ndash;&gt;-->
+<!--&lt;!&ndash;                progressBarFull.style.width = 100 * progress + "%";&ndash;&gt;-->
+<!--&lt;!&ndash;            }).then((unityInstance) => {&ndash;&gt;-->
+<!--&lt;!&ndash;                loadingBar.style.display = "none";&ndash;&gt;-->
+<!--&lt;!&ndash;                instanceObj = unityInstance;&ndash;&gt;-->
+<!--&lt;!&ndash;                window.unityInstance = unityInstance;&ndash;&gt;-->
+
+<!--&lt;!&ndash;                console.log("userArExperienceId&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;", userArExperienceId)&ndash;&gt;-->
+
+<!--&lt;!&ndash;                if (userArExperienceId) {&ndash;&gt;-->
+<!--&lt;!&ndash;                    console.log("userArExperienceId-&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;after-", userArExperienceId)&ndash;&gt;-->
+<!--&lt;!&ndash;                    const apiUrl = `https://greetings-card-apis.tecshield.net/api/user/ar-experience/get/${userArExperienceId}`;&ndash;&gt;-->
+<!--&lt;!&ndash;                    console.log("apiUrl", apiUrl)&ndash;&gt;-->
+<!--&lt;!&ndash;                    fetch(apiUrl, {&ndash;&gt;-->
+<!--&lt;!&ndash;                        method: 'GET',&ndash;&gt;-->
+<!--&lt;!&ndash;                        headers: {&ndash;&gt;-->
+<!--&lt;!&ndash;                            'Content-Type': 'application/json',&ndash;&gt;-->
+<!--&lt;!&ndash;                        },&ndash;&gt;-->
+<!--&lt;!&ndash;                    }).then(response => response.json())&ndash;&gt;-->
+<!--&lt;!&ndash;                        .then(data => {&ndash;&gt;-->
+<!--&lt;!&ndash;                            console.log("data in ar experience-&#45;&#45;&#45;&#45;&#45;&#45;", data)&ndash;&gt;-->
+<!--&lt;!&ndash;                            unityInstance.SendMessage('ArJsonData', 'userArExperience', JSON.stringify(data));&ndash;&gt;-->
+<!--&lt;!&ndash;                        })&ndash;&gt;-->
+<!--&lt;!&ndash;                        .catch(error => {&ndash;&gt;-->
+<!--&lt;!&ndash;                            console.error('Error:', error);&ndash;&gt;-->
+<!--&lt;!&ndash;                            unityInstance.SendMessage('ArJsonData', 'userArExperience', JSON.stringify({}));&ndash;&gt;-->
+<!--&lt;!&ndash;                        });&ndash;&gt;-->
+<!--&lt;!&ndash;                } else {&ndash;&gt;-->
+<!--&lt;!&ndash;                    unityInstance.SendMessage('ArJsonData', 'userArExperience', JSON.stringify({}));&ndash;&gt;-->
+<!--&lt;!&ndash;                }&ndash;&gt;-->
+
+
+<!--&lt;!&ndash;                if (window.permissionsGranted) {&ndash;&gt;-->
+<!--&lt;!&ndash;                    RequestWebcam();&ndash;&gt;-->
+<!--&lt;!&ndash;                }&ndash;&gt;-->
+<!--&lt;!&ndash;            }).catch((message) => {&ndash;&gt;-->
+<!--&lt;!&ndash;                alert(message);&ndash;&gt;-->
+<!--&lt;!&ndash;            });&ndash;&gt;-->
+<!--&lt;!&ndash;        };&ndash;&gt;-->
+<!--&lt;!&ndash;        document.body.appendChild(script);&ndash;&gt;-->
+<!--&lt;!&ndash;    }&ndash;&gt;-->
+
+<!--&lt;!&ndash;    //Set Facing Mode here ('environment', 'user', '')&ndash;&gt;-->
+<!--&lt;!&ndash;    window.unityFacingMode = "environment"&ndash;&gt;-->
+<!--&lt;!&ndash;    window.WEBCAM_SETTINGS = {&ndash;&gt;-->
+<!--&lt;!&ndash;        video: {&ndash;&gt;-->
+<!--&lt;!&ndash;            facingMode: unityFacingMode,&ndash;&gt;-->
+<!--&lt;!&ndash;        },&ndash;&gt;-->
+<!--&lt;!&ndash;        audio: false&ndash;&gt;-->
+<!--&lt;!&ndash;    };&ndash;&gt;-->
+<!--&lt;!&ndash;    window.requestingForPermissions = false;&ndash;&gt;-->
+
+<!--&lt;!&ndash;    async function RequestWebcam() {&ndash;&gt;-->
+<!--&lt;!&ndash;        window.requestingForPermissions = true;&ndash;&gt;-->
+<!--&lt;!&ndash;        try {&ndash;&gt;-->
+<!--&lt;!&ndash;            window.webcamStream = await navigator.mediaDevices.getUserMedia(window.WEBCAM_SETTINGS);&ndash;&gt;-->
+<!--&lt;!&ndash;            console.log("Webcam access granted");&ndash;&gt;-->
+<!--&lt;!&ndash;            requestingForPermissions = false;&ndash;&gt;-->
+<!--&lt;!&ndash;            // Immediately stop the stream to release the camera&ndash;&gt;-->
+<!--&lt;!&ndash;            StopWebcam();&ndash;&gt;-->
+<!--&lt;!&ndash;        } catch (err) {&ndash;&gt;-->
+<!--&lt;!&ndash;            //user denied camera permission - show error panel&ndash;&gt;-->
+<!--&lt;!&ndash;            console.error("getUserMedia error - ", err);&ndash;&gt;-->
+<!--&lt;!&ndash;            ShowError("Failed to start the experience. Camera permission was denied");&ndash;&gt;-->
+<!--&lt;!&ndash;            window.requestingForPermissions = false;&ndash;&gt;-->
+<!--&lt;!&ndash;        }&ndash;&gt;-->
+<!--&lt;!&ndash;    }&ndash;&gt;-->
+
+<!--&lt;!&ndash;    function StopWebcam() {&ndash;&gt;-->
+<!--&lt;!&ndash;        console.log("stopping camera");&ndash;&gt;-->
+<!--&lt;!&ndash;        window.webcamStream.getTracks().forEach(track => track.stop());&ndash;&gt;-->
+<!--&lt;!&ndash;    }&ndash;&gt;-->
+
+<!--&lt;!&ndash;    async function StartWebcam() {&ndash;&gt;-->
+<!--&lt;!&ndash;        console.log("StartWebcam")&ndash;&gt;-->
+<!--&lt;!&ndash;        window.webcamStream = await navigator.mediaDevices.getUserMedia(window.WEBCAM_SETTINGS);&ndash;&gt;-->
+<!--&lt;!&ndash;        while (window.requestingForPermissions) {&ndash;&gt;-->
+<!--&lt;!&ndash;            // Wait until requestingForPermissions becomes true.&ndash;&gt;-->
+<!--&lt;!&ndash;            console.log("Waiting for permissions...");&ndash;&gt;-->
+<!--&lt;!&ndash;            await new Promise(resolve => setTimeout(resolve, 100)); // Adjust the delay time as needed.&ndash;&gt;-->
+<!--&lt;!&ndash;        }&ndash;&gt;-->
+<!--&lt;!&ndash;        console.log("Got Permissions");&ndash;&gt;-->
+<!--&lt;!&ndash;        if (window.webcamStream) {&ndash;&gt;-->
+<!--&lt;!&ndash;            const video = document.querySelector("#webcam-video");&ndash;&gt;-->
+<!--&lt;!&ndash;            video.srcObject = webcamStream;&ndash;&gt;-->
+<!--&lt;!&ndash;            try {&ndash;&gt;-->
+<!--&lt;!&ndash;                await arCamera.startWebcam(video);&ndash;&gt;-->
+<!--&lt;!&ndash;                console.log("Webcam started successfully");&ndash;&gt;-->
+<!--&lt;!&ndash;                window.unityInstance.SendMessage('ARCamera', 'OnStartWebcamSuccess');&ndash;&gt;-->
+
+<!--&lt;!&ndash;                //replace background transparency&ndash;&gt;-->
+<!--&lt;!&ndash;                const canvas = document.querySelector("#unity-canvas");&ndash;&gt;-->
+<!--&lt;!&ndash;                let bgColor = window.getComputedStyle(canvas).backgroundColor;&ndash;&gt;-->
+<!--&lt;!&ndash;                canvas.style.background = bgColor.replace("rgb", "rgba").replace(")", ", 0)");&ndash;&gt;-->
+
+<!--&lt;!&ndash;            } catch (err) {&ndash;&gt;-->
+<!--&lt;!&ndash;                console.error("Webcam failed to start - ", err);&ndash;&gt;-->
+<!--&lt;!&ndash;                window.unityInstance.SendMessage('ARCamera', 'OnStartWebcamFail');&ndash;&gt;-->
+<!--&lt;!&ndash;            }&ndash;&gt;-->
+<!--&lt;!&ndash;        } else {&ndash;&gt;-->
+<!--&lt;!&ndash;            console.error("Webcam failed to start - permission not yet granted");&ndash;&gt;-->
+<!--&lt;!&ndash;            window.unityInstance.SendMessage('ARCamera', 'OnStartWebcamFail');&ndash;&gt;-->
+<!--&lt;!&ndash;        }&ndash;&gt;-->
+<!--&lt;!&ndash;    }&ndash;&gt;-->
+
+<!--&lt;!&ndash;    async function LoadWebcams() {&ndash;&gt;-->
+<!--&lt;!&ndash;        let camDevices = [];&ndash;&gt;-->
+<!--&lt;!&ndash;        // let backCams = [];&ndash;&gt;-->
+<!--&lt;!&ndash;        let devices = await navigator.mediaDevices.enumerateDevices();&ndash;&gt;-->
+<!--&lt;!&ndash;        var ctr = 0;&ndash;&gt;-->
+<!--&lt;!&ndash;        devices.forEach(mediaDevice => {&ndash;&gt;-->
+<!--&lt;!&ndash;            if (mediaDevice.kind === 'videoinput') {&ndash;&gt;-->
+<!--&lt;!&ndash;                if (window.unityFacingMode == 'environment' && !mediaDevice.label.includes('facing front')) {&ndash;&gt;-->
+<!--&lt;!&ndash;                    //back cam only&ndash;&gt;-->
+<!--&lt;!&ndash;                    camDevices.push(mediaDevice);&ndash;&gt;-->
+<!--&lt;!&ndash;                } else if (window.unityFacingMode == 'user' && mediaDevice.label.includes('facing front')) {&ndash;&gt;-->
+<!--&lt;!&ndash;                    //front cam only&ndash;&gt;-->
+<!--&lt;!&ndash;                    camDevices.push(mediaDevice);&ndash;&gt;-->
+<!--&lt;!&ndash;                } else {&ndash;&gt;-->
+<!--&lt;!&ndash;                    //back and front&ndash;&gt;-->
+<!--&lt;!&ndash;                    camDevices.push(mediaDevice);&ndash;&gt;-->
+<!--&lt;!&ndash;                }&ndash;&gt;-->
+
+<!--&lt;!&ndash;                ctr++;&ndash;&gt;-->
+<!--&lt;!&ndash;            }&ndash;&gt;-->
+<!--&lt;!&ndash;        });&ndash;&gt;-->
+<!--&lt;!&ndash;        var select = document.getElementById("chooseCamSel");&ndash;&gt;-->
+<!--&lt;!&ndash;        select.style.visibility = "visible";&ndash;&gt;-->
+<!--&lt;!&ndash;        var count = 0;&ndash;&gt;-->
+<!--&lt;!&ndash;        //reverse array because some Android phones can't distinguish front and back cams at first load&ndash;&gt;-->
+<!--&lt;!&ndash;        //and when this happens, most of the time, front cam goes first and back cam goes last&ndash;&gt;-->
+<!--&lt;!&ndash;        camDevices = camDevices.reverse();&ndash;&gt;-->
+<!--&lt;!&ndash;        camDevices.forEach(mediaDevice => {&ndash;&gt;-->
+<!--&lt;!&ndash;            const option = document.createElement('option');&ndash;&gt;-->
+<!--&lt;!&ndash;            option.value = mediaDevice.deviceId;&ndash;&gt;-->
+<!--&lt;!&ndash;            let label = `Camera ${count}`;&ndash;&gt;-->
+<!--&lt;!&ndash;            if (mediaDevice.label) {&ndash;&gt;-->
+<!--&lt;!&ndash;                label = mediaDevice.label&ndash;&gt;-->
+<!--&lt;!&ndash;            }&ndash;&gt;-->
+<!--&lt;!&ndash;            const textNode = document.createTextNode(label);&ndash;&gt;-->
+<!--&lt;!&ndash;            option.appendChild(textNode);&ndash;&gt;-->
+<!--&lt;!&ndash;            select.appendChild(option);&ndash;&gt;-->
+<!--&lt;!&ndash;            count++;&ndash;&gt;-->
+<!--&lt;!&ndash;        });&ndash;&gt;-->
+<!--&lt;!&ndash;        iTracker.WEBCAM_NAME = select.options[select.selectedIndex].innerHTML;&ndash;&gt;-->
+<!--&lt;!&ndash;    }&ndash;&gt;-->
+
+<!--&lt;!&ndash;    function SelectCam() {&ndash;&gt;-->
+<!--&lt;!&ndash;        var select = document.getElementById("chooseCamSel");&ndash;&gt;-->
+<!--&lt;!&ndash;        window.deviceId = select.value;&ndash;&gt;-->
+<!--&lt;!&ndash;        window.WEBCAM_SETTINGS.video['deviceId'] = deviceId;&ndash;&gt;-->
+<!--&lt;!&ndash;        //console.log(window.WEBCAM_SETTINGS);&ndash;&gt;-->
+<!--&lt;!&ndash;        iTracker.WEBCAM_NAME = select.options[select.selectedIndex].innerHTML;&ndash;&gt;-->
+<!--&lt;!&ndash;    }&ndash;&gt;-->
+
+<!--&lt;!&ndash;    async function FlipCam() {&ndash;&gt;-->
+<!--&lt;!&ndash;        arCamera.stopWebcam();&ndash;&gt;-->
+<!--&lt;!&ndash;        window.WEBCAM_SETTINGS.video.deviceId = '';&ndash;&gt;-->
+<!--&lt;!&ndash;        if (window.WEBCAM_SETTINGS.video.facingMode == 'user') {&ndash;&gt;-->
+<!--&lt;!&ndash;            window.WEBCAM_SETTINGS.video.facingMode = 'environment';&ndash;&gt;-->
+<!--&lt;!&ndash;            arCamera.setFlipped(false);&ndash;&gt;-->
+<!--&lt;!&ndash;        } else {&ndash;&gt;-->
+<!--&lt;!&ndash;            window.WEBCAM_SETTINGS.video.facingMode = 'user';&ndash;&gt;-->
+<!--&lt;!&ndash;            arCamera.setFlipped(true);&ndash;&gt;-->
+<!--&lt;!&ndash;        }&ndash;&gt;-->
+<!--&lt;!&ndash;        window.webcamStream = await navigator.mediaDevices.getUserMedia(window.WEBCAM_SETTINGS);&ndash;&gt;-->
+<!--&lt;!&ndash;        const video = document.querySelector("#webcam-video");&ndash;&gt;-->
+<!--&lt;!&ndash;        video.srcObject = webcamStream;&ndash;&gt;-->
+<!--&lt;!&ndash;        await arCamera.startWebcam(video);&ndash;&gt;-->
+<!--&lt;!&ndash;    }&ndash;&gt;-->
+
+<!--&lt;!&ndash;    async function IsCameraPermissionGranted() {&ndash;&gt;-->
+<!--&lt;!&ndash;        if (!navigator.permissions || !navigator.mediaDevices) {&ndash;&gt;-->
+<!--&lt;!&ndash;            console.log("Permissions API or mediaDevices not supported.");&ndash;&gt;-->
+<!--&lt;!&ndash;            return false;&ndash;&gt;-->
+<!--&lt;!&ndash;        }&ndash;&gt;-->
+<!--&lt;!&ndash;        try {&ndash;&gt;-->
+<!--&lt;!&ndash;            // Query the status of the camera permission&ndash;&gt;-->
+<!--&lt;!&ndash;            const permissionStatus = await navigator.permissions.query({name: "camera"});&ndash;&gt;-->
+<!--&lt;!&ndash;            if (permissionStatus.state === "granted") {&ndash;&gt;-->
+<!--&lt;!&ndash;                console.log("Camera permission has already been granted.");&ndash;&gt;-->
+<!--&lt;!&ndash;                return true;&ndash;&gt;-->
+<!--&lt;!&ndash;            } else if (permissionStatus.state === "prompt") {&ndash;&gt;-->
+<!--&lt;!&ndash;                console.log("Camera permission is promptable.");&ndash;&gt;-->
+<!--&lt;!&ndash;                return false;&ndash;&gt;-->
+<!--&lt;!&ndash;            } else {&ndash;&gt;-->
+<!--&lt;!&ndash;                console.log("Camera permission has been denied.");&ndash;&gt;-->
+<!--&lt;!&ndash;                return false;&ndash;&gt;-->
+<!--&lt;!&ndash;            }&ndash;&gt;-->
+<!--&lt;!&ndash;        } catch (error) {&ndash;&gt;-->
+<!--&lt;!&ndash;            console.log("Error checking camera permission:", error);&ndash;&gt;-->
+<!--&lt;!&ndash;            return false;&ndash;&gt;-->
+<!--&lt;!&ndash;        }&ndash;&gt;-->
+<!--&lt;!&ndash;    }&ndash;&gt;-->
+
+<!--&lt;!&ndash;    function ShowError(error) {&ndash;&gt;-->
+<!--&lt;!&ndash;        var errorDiv = document.getElementById("errorDiv");&ndash;&gt;-->
+<!--&lt;!&ndash;        errorDiv.style.opacity = 1;&ndash;&gt;-->
+<!--&lt;!&ndash;        errorDiv.style.visibility = "visible";&ndash;&gt;-->
+<!--&lt;!&ndash;        document.getElementById("errorText").innerHTML = error;&ndash;&gt;-->
+<!--&lt;!&ndash;    }&ndash;&gt;-->
+
+<!--&lt;!&ndash;    function ShowScreenshot(dataUrl) {&ndash;&gt;-->
+<!--&lt;!&ndash;        var screenshotDiv = document.getElementById("screenshotDiv");&ndash;&gt;-->
+<!--&lt;!&ndash;        screenshotDiv.style.opacity = 1;&ndash;&gt;-->
+<!--&lt;!&ndash;        screenshotDiv.style.visibility = "visible";&ndash;&gt;-->
+<!--&lt;!&ndash;        document.getElementById("screenshotImg").src = dataUrl;&ndash;&gt;-->
+<!--&lt;!&ndash;        document.getElementById("screenshotImg").style.width = "80vw";&ndash;&gt;-->
+<!--&lt;!&ndash;        document.getElementById("screenshotImg").style.height = 80 / window.innerWidth * window.innerHeight + "vw";&ndash;&gt;-->
+<!--&lt;!&ndash;    }&ndash;&gt;-->
+
+<!--&lt;!&ndash;    function HideScreenshot() {&ndash;&gt;-->
+<!--&lt;!&ndash;        var screenshotDiv = document.getElementById('screenshotDiv');&ndash;&gt;-->
+<!--&lt;!&ndash;        screenshotDiv.style.opacity = 0;&ndash;&gt;-->
+<!--&lt;!&ndash;        setTimeout(() => {&ndash;&gt;-->
+<!--&lt;!&ndash;            screenshotDiv.style.visibility = 'hidden';&ndash;&gt;-->
+<!--&lt;!&ndash;        }, 500);&ndash;&gt;-->
+<!--&lt;!&ndash;    }&ndash;&gt;-->
+
+<!--&lt;!&ndash;    function ShowConfirmUrl(url) {&ndash;&gt;-->
+<!--&lt;!&ndash;        var confirmUrlDiv = document.getElementById("confirmUrlDiv");&ndash;&gt;-->
+<!--&lt;!&ndash;        confirmUrlDiv.style.opacity = 1;&ndash;&gt;-->
+<!--&lt;!&ndash;        confirmUrlDiv.style.visibility = "visible";&ndash;&gt;-->
+<!--&lt;!&ndash;        window.newUrlString = url;&ndash;&gt;-->
+<!--&lt;!&ndash;        document.getElementById("confirmUrlText").innerText = "Are you sure you want to visit " + url + "?";&ndash;&gt;-->
+<!--&lt;!&ndash;    }&ndash;&gt;-->
+
+<!--&lt;!&ndash;    function HideConfirmUrl() {&ndash;&gt;-->
+<!--&lt;!&ndash;        var confirmUrlDiv = document.getElementById("confirmUrlDiv");&ndash;&gt;-->
+<!--&lt;!&ndash;        confirmUrlDiv.style.opacity = 0;&ndash;&gt;-->
+<!--&lt;!&ndash;        setTimeout(() => {&ndash;&gt;-->
+<!--&lt;!&ndash;            confirmUrlDiv.style.visibility = 'hidden';&ndash;&gt;-->
+<!--&lt;!&ndash;        }, 500);&ndash;&gt;-->
+<!--&lt;!&ndash;    }&ndash;&gt;-->
+
+<!--&lt;!&ndash;    window.ITRACKER_GLOBALS = {&ndash;&gt;-->
+<!--&lt;!&ndash;        //place global settings here&ndash;&gt;-->
+<!--&lt;!&ndash;        INTERNAL_SMOOTHFACTOR_POS: .075,&ndash;&gt;-->
+<!--&lt;!&ndash;    }&ndash;&gt;-->
+<!--&lt;!&ndash;</script>&ndash;&gt;-->
+<!--&lt;!&ndash;</body>&ndash;&gt;-->
+<!--&lt;!&ndash;</html>&ndash;&gt;-->
+<!--<!DOCTYPE html>-->
+<!--<html lang="en-us">-->
+<!--<head>-->
+<!--    <meta charset="utf-8">-->
+<!--    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">-->
+<!--    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">-->
+<!--    <title>Unity WebGL Player | My project</title>-->
+<!--    <link rel="shortcut icon" href="TemplateData/favicon.ico">-->
+<!--    <link rel="stylesheet" href="TemplateData/style.css">-->
+<!--    <link rel="manifest" href="manifest.webmanifest">-->
+<!--    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">-->
+<!--    <style>-->
+<!--        body {-->
+<!--            font-family: 'Roboto', sans-serif;-->
+<!--            letter-spacing: 0.05em;-->
+<!--            font-size: max(2vw, 2vh);-->
+<!--            color: white-->
+<!--        }-->
+
+<!--        button {-->
+<!--            height: max(5vw, 5vh);-->
+<!--            font-size: max(2vw, 2vh);-->
+<!--            font-weight: bold;-->
+<!--            border-radius: max(1.5vw, 1.5vh);-->
+<!--            padding-left: max(5vw, 5vh);-->
+<!--            padding-right: max(5vw, 5vh);-->
+<!--            border: 0;-->
+<!--            color: #62a7fe;-->
+<!--            background: #3d3d3d;-->
+<!--            transition: 0.1s;-->
+<!--            user-select: none;-->
+<!--            -webkit-user-select: none;-->
+<!--            -moz-user-select: none;-->
+<!--            -ms-user-select: none;-->
+<!--        }-->
+
+<!--        button:hover {-->
+<!--            filter: brightness(1.15)-->
+<!--        }-->
+
+<!--        button:active {-->
+<!--            transform: scale(0.95);-->
+<!--            filter: brightness(0.85)-->
+<!--        }-->
+
+<!--        .ctaDiv {-->
+<!--            display: flex;-->
+<!--            flex-direction: column;-->
+<!--            align-items: center;-->
+<!--            justify-content: center;-->
+<!--            position: absolute;-->
+<!--            left: 0;-->
+<!--            right: 0;-->
+<!--            top: 0;-->
+<!--            bottom: 0;-->
+<!--            background: #2f2e32aa;-->
+<!--            z-index: 99;-->
+<!--            transition: 0.5s;-->
+<!--        }-->
+<!--    </style>-->
+<!--</head>-->
+<!--<body>-->
+<!--&lt;!&ndash;IMAGETARGETS&ndash;&gt;-->
+<!--<imagetarget id='bear' src='targets/bear.png'></imagetarget>-->
+<!--<imagetarget id='bfly' src='targets/bfly.png'></imagetarget>-->
+<!--<imagetarget id='flower' src='targets/flower.png'></imagetarget>-->
+<!--<imagetarget id='lady' src='targets/lady.png'></imagetarget>-->
+<!--<imagetarget id='reel' src='targets/reel.png'></imagetarget>-->
+<!--<imagetarget id='rmn' src='targets/rmn.png'></imagetarget>-->
+<!--<imagetarget id='goku-amoled-super-3840x2160-12116' src='targets/goku-amoled-super-3840x2160-12116.png'></imagetarget>-->
+<!--<imagetarget id='goku' src='targets/goku.png'></imagetarget>-->
+
+
+<!--<imagetarget id='rightCard' src=''></imagetarget>-->
+<!--<imagetarget id='frontCard' src=''></imagetarget>-->
+
+<!--<script>-->
+
+<!--    function extractUserIdFromUrl() {-->
+<!--        const params = new URLSearchParams(window.location.search);-->
+<!--        return params.get("templateId") || null;-->
+<!--    }-->
+
+
+<!--    (async function () {-->
+<!--        try {-->
+<!--            // 1. Get the user ID from URL-->
+<!--            //const userId = "689ad120401a02aea1df7874";-->
+<!--            // const pathParts = window.location.pathname.split('/');-->
+<!--            // const userId = pathParts[pathParts.length - 1];-->
+<!--            // console.log("User ID:", userId);-->
+
+<!--            const userId = extractUserIdFromUrl();-->
+
+<!--            // 2. Fetch AR data from API-->
+<!--            const apiUrl = `https://api.incardible.com.au/api/user/ar-experience/get/${userId}`;-->
+<!--            const res = await fetch(apiUrl, { cache: "no-cache" });-->
+<!--            if (!res.ok) throw new Error("Failed to fetch AR experience data");-->
+
+<!--            const json = await res.json();-->
+<!--            console.log("Fetched AR data:", json);-->
+
+<!--            // 3. Validate required data-->
+<!--            const cardFront = json.data?.cardId?.frontDesign;-->
+<!--            const rightImage = json.data?.arTemplateData?.rightImageUrl;-->
+<!--            if (!cardFront) throw new Error("frontDesign missing from cardId");-->
+<!--            if (!rightImage) throw new Error("rightImageUrl missing from arTemplateData");-->
+
+<!--            // 4. Update AR image target sources-->
+<!--            document.getElementById("frontCard").setAttribute("src", cardFront);-->
+<!--            document.getElementById("rightCard").setAttribute("src", rightImage);-->
+
+<!--            // 4. Load AR scripts dynamically after updating images-->
+<!--            //await loadScript("arcamera.js");-->
+<!--            //await loadScript("itracker.js");-->
+<!--            //await loadScript("Build/Ar Build.loader.js");-->
+
+<!--        } catch (err) {-->
+<!--            console.error("Error initializing AR experience:", err);-->
+<!--            alert("Failed to load AR experience. Please try again.");-->
+<!--        }-->
+
+<!--        // Helper to load scripts dynamically-->
+<!--        function loadScript(src) {-->
+<!--            return new Promise((resolve, reject) => {-->
+<!--                const script = document.createElement("script");-->
+<!--                script.src = src;-->
+<!--                script.onload = resolve;-->
+<!--                script.onerror = reject;-->
+<!--                document.body.appendChild(script);-->
+<!--            });-->
+<!--        }-->
+<!--    })();-->
+<!--</script>-->
+
+
+<!--<video id="webcam-video" muted autoplay playsinline style="width:1px;position:absolute"></video>-->
+<!--<canvas id="video-canvas" style="width:100%; height:100%; object-fit:cover; position:absolute"></canvas>-->
+<!--<div id="startARDiv" class="ctaDiv" style="background: #2f2e32">-->
+<!--    <select id="chooseCamSel"-->
+<!--            style="visibility: hidden; background: transparent; border: .05vh solid white; border-radius: max(0.5vw, 0.5vh); color:white; font-size: max(1.5vw, 1.5vh); position: absolute; bottom: 80px"-->
+<!--            onchange="SelectCam()"></select>-->
+<!--    <p style="text-align: center; width:min(60vw, 60vh);">This augmented reality experience requires access to your-->
+<!--        device's camera</p>-->
+<!--    <button id="startARButton" onclick="StartAR()" style="visibility: hidden">ALLOW ACCESS</button>-->
+<!--    <br><br><br>-->
+<!--</div>-->
+<!--<div id="screenshotDiv" style="visibility: hidden; opacity: 0;" class="ctaDiv">-->
+<!--    <div style="position:relative; background-color:#2c2b2f; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.25); border-radius: max(1.5vh, 1.5vw); text-align: center; overflow: hidden">-->
+<!--        <img id="screenshotImg" src="" alt="screenshot" style="width:80vw; height:80vh">-->
+<!--        <button onclick="HideScreenshot()"-->
+<!--                style="position:absolute;right: max(1vw, 1vh);top: max(1vw, 1vh);background: #3d3d3d77; width: max(4vw, 4vh); height: max(4vw, 4vh);padding: 0;border-radius: 100vw; display: flex;align-items: center;justify-content: center;">-->
+<!--            <svg width="max(2.5vw,2.5vh)" height="max(2.5vw,2.5vh)" viewBox="0 0 24 24">-->
+<!--                <line x1="3" y1="3" x2="21" y2="21" stroke="#999" stroke-width="2.5"></line>-->
+<!--                <line x1="3" y1="21" x2="21" y2="3" stroke="#999" stroke-width="2.5"></line>-->
+<!--            </svg>-->
+<!--        </button>-->
+<!--        <p style="font-size: max(1vw, 1vh); color: #fff6">Press and hold to save or share this screenshot</p>-->
+<!--    </div>-->
+<!--</div>-->
+<!--<div id="confirmUrlDiv" style="visibility: hidden; opacity: 0;" class="ctaDiv">-->
+<!--    <div style="position:relative; background-color:#2c2b2f; padding:10px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.25); width: min(80vw,80vh); display:flex; flex-direction: column; align-items: center; border-radius: 1.5vh;-->
+<!--">-->
+<!--        <p id="confirmUrlText" style="text-align: center; width:80%; overflow: hidden; text-overflow: ellipsis;">Are you-->
+<!--            sure you want to visit url.com?</p>-->
+<!--        <div style="width: 100%">-->
+<!--            <button style="width: 100%; margin-bottom: 15px;"-->
+<!--                    onclick="window.open(newUrlString, '_blank').focus(); HideConfirmUrl()">VISIT SITE-->
+<!--            </button>-->
+<!--            <button style="width: 100%" onclick="HideConfirmUrl()">GO BACK</button>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</div>-->
+<!--<div id="errorDiv" class="ctaDiv" style="visibility: hidden; opacity: 0; background-color:#2c2b2f">-->
+<!--    <p id="errorText" style="text-align: center; width:60vw; color:#7f3f3f; font-size: max(3vw, 3vh);"></p>-->
+<!--</div>-->
+<!--<div id="unity-container">-->
+<!--    <canvas id="unity-canvas" width=1920 height=1080 tabindex="-1"></canvas>-->
+<!--    <div id="unity-loading-bar">-->
+<!--        <div id="unity-logo"></div>-->
+<!--        <div id="unity-progress-bar-empty">-->
+<!--            <div id="unity-progress-bar-full"></div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--    <div id="unity-warning"></div>-->
+<!--</div>-->
+<!--<script src="arcamera.js" type="text/javascript"></script>-->
+<!--<script src="itracker.js" type="text/javascript"></script>-->
+<!--<script>-->
+<!--    // Disable double-tap to zoom-->
+<!--    document.addEventListener('touchstart', function (event) {-->
+<!--        if (event.touches.length > 1) {-->
+<!--            event.preventDefault();-->
+<!--        }-->
+<!--    }, {passive: false});-->
+<!--    // Disable pinch to zoom-->
+<!--    document.addEventListener('gesturestart', function (event) {-->
+<!--        event.preventDefault();-->
+<!--    });-->
+<!--    var initialize = async () => {-->
+<!--        var unityCanvas = document.querySelector("#unity-canvas");-->
+<!--        var videoCanvas = document.querySelector("#video-canvas");-->
+<!--        window.arCamera = new ARCamera(unityCanvas, videoCanvas);-->
+<!--        window.iTracker = new ImageTracker(arCamera);-->
+<!--        try {-->
+<!--            await window.iTracker.initialize("./opencv.js");-->
+<!--            console.log("ImageTracker initialized!");-->
+<!--        } catch {-->
+<!--            console.error("Failed to initialize ImageTracker. Are you missing opencv.js? " + error);-->
+<!--            ShowError("Failed to initialize the experience.");-->
+<!--            return;-->
+<!--        }-->
+<!--        await LoadWebcams();-->
+<!--        document.getElementById("startARButton").style.visibility = "visible";-->
+<!--        window.permissionsGranted = IsCameraPermissionGranted();-->
+<!--    }-->
+<!--    initialize();-->
+<!--    window.addEventListener("load", function () {-->
+<!--        if ("serviceWorker" in navigator) {-->
+<!--            navigator.serviceWorker.register("ServiceWorker.js");-->
+<!--        }-->
+<!--    });-->
+
+<!--    var instanceObj;-->
+<!--    var container = document.querySelector("#unity-container");-->
+<!--    var canvas = document.querySelector("#unity-canvas");-->
+<!--    var loadingBar = document.querySelector("#unity-loading-bar");-->
+<!--    var progressBarFull = document.querySelector("#unity-progress-bar-full");-->
+<!--    var warningBanner = document.querySelector("#unity-warning");-->
+<!--    // Shows a temporary message banner/ribbon for a few seconds, or-->
+<!--    // a permanent error message on top of the canvas if type=='error'.-->
+<!--    // If type=='warning', a yellow highlight color is used.-->
+<!--    // Modify or remove this function to customize the visually presented-->
+<!--    // way that non-critical warnings and error messages are presented to the-->
+<!--    // user.-->
+<!--    function unityShowBanner(msg, type) {-->
+<!--        function updateBannerVisibility() {-->
+<!--            warningBanner.style.display = warningBanner.children.length ? 'block' : 'none';-->
+<!--        }-->
+
+<!--        var div = document.createElement('div');-->
+<!--        div.innerHTML = msg;-->
+<!--        warningBanner.appendChild(div);-->
+<!--        if (type == 'error') div.style = 'background: red; padding: 10px;';-->
+<!--        else {-->
+<!--            if (type == 'warning') div.style = 'background: yellow; padding: 10px;';-->
+<!--            setTimeout(function () {-->
+<!--                warningBanner.removeChild(div);-->
+<!--                updateBannerVisibility();-->
+<!--            }, 5000);-->
+<!--        }-->
+<!--        updateBannerVisibility();-->
+<!--    }-->
+<!--    // function extractUserIdFromUrl() {-->
+<!--    //     const pathParts = window.location.pathname.split("/").filter(Boolean);-->
+<!--    //     // Get the last segment (assumed to be the ID)-->
+<!--    //     const idFromPath = pathParts[pathParts.length - 1];-->
+<!--    //     return idFromPath || null;-->
+<!--    // }-->
+
+
+<!--    function StartAR() {-->
+<!--        var startARDiv = document.querySelector("#startARDiv");-->
+<!--        startARDiv.style.opacity = 0;-->
+<!--        setTimeout(() => {-->
+<!--            startARDiv.style.visibility = "hidden";-->
+<!--        }, 500);-->
+<!--        var buildUrl = "Build";-->
+<!--        var loaderUrl = buildUrl + "/Ar Build.loader.js";-->
+<!--        var config = {-->
+<!--            dataUrl: buildUrl + "/Ar Build.data",-->
+<!--            frameworkUrl: buildUrl + "/Ar Build.framework.js",-->
+<!--            codeUrl: buildUrl + "/Ar Build.wasm",-->
+<!--            streamingAssetsUrl: "StreamingAssets",-->
+<!--            companyName: "DefaultCompany",-->
+<!--            productName: "My project",-->
+<!--            productVersion: "1.0.0",-->
+<!--            showBanner: unityShowBanner,-->
+<!--        };-->
+<!--        // By default Unity keeps WebGL canvas render target size matched with-->
+<!--        // the DOM size of the canvas element (scaled by window.devicePixelRatio)-->
+<!--        // Set this to false if you want to decouple this synchronization from-->
+<!--        // happening inside the engine, and you would instead like to size up-->
+<!--        // the canvas DOM size and WebGL render target sizes yourself.-->
+<!--        // config.matchWebGLToCanvasSize = false;-->
+<!--        if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {-->
+<!--            // Mobile device style: fill the whole browser client area with the game canvas:-->
+<!--            var meta = document.createElement('meta');-->
+<!--            meta.name = 'viewport';-->
+<!--            meta.content = 'width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, shrink-to-fit=yes';-->
+<!--            document.getElementsByTagName('head')[0].appendChild(meta);-->
+<!--        }-->
+<!--        loadingBar.style.display = "block";-->
+
+<!--        const userArExperienceId = extractUserIdFromUrl();-->
+
+<!--        var script = document.createElement("script");-->
+<!--        script.src = loaderUrl;-->
+<!--        script.onload = () => {-->
+<!--            createUnityInstance(canvas, config, (progress) => {-->
+<!--                progressBarFull.style.width = 100 * progress + "%";-->
+<!--            }).then((unityInstance) => {-->
+<!--                loadingBar.style.display = "none";-->
+<!--                instanceObj = unityInstance;-->
+<!--                window.unityInstance = unityInstance;-->
+
+<!--                console.log("userArExperienceId&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;", userArExperienceId)-->
+
+<!--                if (userArExperienceId) {-->
+<!--                    console.log("userArExperienceId-&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;after-", userArExperienceId)-->
+<!--                    const apiUrl = `https://api.incardible.com.au/api/user/ar-experience/get/${userArExperienceId}`;-->
+<!--                    console.log("apiUrl", apiUrl)-->
+<!--                    fetch(apiUrl, {-->
+<!--                        method: 'GET',-->
+<!--                        headers: {-->
+<!--                            'Content-Type': 'application/json',-->
+<!--                        },-->
+<!--                    }).then(response => response.json())-->
+<!--                        .then(data => {-->
+<!--                            console.log("data in ar experience-&#45;&#45;&#45;&#45;&#45;&#45;", data)-->
+<!--                            unityInstance.SendMessage('ArJsonData', 'userArExperience', JSON.stringify(data));-->
+<!--                        })-->
+<!--                        .catch(error => {-->
+<!--                            console.error('Error:', error);-->
+<!--                            unityInstance.SendMessage('ArJsonData', 'userArExperience', JSON.stringify({}));-->
+<!--                        });-->
+<!--                } else {-->
+<!--                    unityInstance.SendMessage('ArJsonData', 'userArExperience', JSON.stringify({}));-->
+<!--                }-->
+
+
+<!--                if (window.permissionsGranted) {-->
+<!--                    RequestWebcam();-->
+<!--                }-->
+<!--            }).catch((message) => {-->
+<!--                alert(message);-->
+<!--            });-->
+<!--        };-->
+<!--        document.body.appendChild(script);-->
+<!--    }-->
+
+<!--    //Set Facing Mode here ('environment', 'user', '')-->
+<!--    window.unityFacingMode = "environment"-->
+<!--    window.WEBCAM_SETTINGS = {-->
+<!--        video: {-->
+<!--            facingMode: unityFacingMode,-->
+<!--        },-->
+<!--        audio: false-->
+<!--    };-->
+<!--    window.requestingForPermissions = false;-->
+
+<!--    async function RequestWebcam() {-->
+<!--        window.requestingForPermissions = true;-->
+<!--        try {-->
+<!--            window.webcamStream = await navigator.mediaDevices.getUserMedia(window.WEBCAM_SETTINGS);-->
+<!--            console.log("Webcam access granted");-->
+<!--            requestingForPermissions = false;-->
+<!--            // Immediately stop the stream to release the camera-->
+<!--            StopWebcam();-->
+<!--        } catch (err) {-->
+<!--            //user denied camera permission - show error panel-->
+<!--            console.error("getUserMedia error - ", err);-->
+<!--            ShowError("Failed to start the experience. Camera permission was denied");-->
+<!--            window.requestingForPermissions = false;-->
+<!--        }-->
+<!--    }-->
+
+<!--    function StopWebcam() {-->
+<!--        console.log("stopping camera");-->
+<!--        window.webcamStream.getTracks().forEach(track => track.stop());-->
+<!--    }-->
+
+<!--    async function StartWebcam() {-->
+<!--        console.log("StartWebcam")-->
+<!--        window.webcamStream = await navigator.mediaDevices.getUserMedia(window.WEBCAM_SETTINGS);-->
+<!--        while (window.requestingForPermissions) {-->
+<!--            // Wait until requestingForPermissions becomes true.-->
+<!--            console.log("Waiting for permissions...");-->
+<!--            await new Promise(resolve => setTimeout(resolve, 100)); // Adjust the delay time as needed.-->
+<!--        }-->
+<!--        console.log("Got Permissions");-->
+<!--        if (window.webcamStream) {-->
+<!--            const video = document.querySelector("#webcam-video");-->
+<!--            video.srcObject = webcamStream;-->
+<!--            try {-->
+<!--                await arCamera.startWebcam(video);-->
+<!--                console.log("Webcam started successfully");-->
+<!--                window.unityInstance.SendMessage('ARCamera', 'OnStartWebcamSuccess');-->
+
+<!--                //replace background transparency-->
+<!--                const canvas = document.querySelector("#unity-canvas");-->
+<!--                let bgColor = window.getComputedStyle(canvas).backgroundColor;-->
+<!--                canvas.style.background = bgColor.replace("rgb", "rgba").replace(")", ", 0)");-->
+
+<!--            } catch (err) {-->
+<!--                console.error("Webcam failed to start - ", err);-->
+<!--                window.unityInstance.SendMessage('ARCamera', 'OnStartWebcamFail');-->
+<!--            }-->
+<!--        } else {-->
+<!--            console.error("Webcam failed to start - permission not yet granted");-->
+<!--            window.unityInstance.SendMessage('ARCamera', 'OnStartWebcamFail');-->
+<!--        }-->
+<!--    }-->
+
+<!--    async function LoadWebcams() {-->
+<!--        let camDevices = [];-->
+<!--        // let backCams = [];-->
+<!--        let devices = await navigator.mediaDevices.enumerateDevices();-->
+<!--        var ctr = 0;-->
+<!--        devices.forEach(mediaDevice => {-->
+<!--            if (mediaDevice.kind === 'videoinput') {-->
+<!--                if (window.unityFacingMode == 'environment' && !mediaDevice.label.includes('facing front')) {-->
+<!--                    //back cam only-->
+<!--                    camDevices.push(mediaDevice);-->
+<!--                } else if (window.unityFacingMode == 'user' && mediaDevice.label.includes('facing front')) {-->
+<!--                    //front cam only-->
+<!--                    camDevices.push(mediaDevice);-->
+<!--                } else {-->
+<!--                    //back and front-->
+<!--                    camDevices.push(mediaDevice);-->
+<!--                }-->
+
+<!--                ctr++;-->
+<!--            }-->
+<!--        });-->
+<!--        var select = document.getElementById("chooseCamSel");-->
+<!--        select.style.visibility = "visible";-->
+<!--        var count = 0;-->
+<!--        //reverse array because some Android phones can't distinguish front and back cams at first load-->
+<!--        //and when this happens, most of the time, front cam goes first and back cam goes last-->
+<!--        camDevices = camDevices.reverse();-->
+<!--        camDevices.forEach(mediaDevice => {-->
+<!--            const option = document.createElement('option');-->
+<!--            option.value = mediaDevice.deviceId;-->
+<!--            let label = `Camera ${count}`;-->
+<!--            if (mediaDevice.label) {-->
+<!--                label = mediaDevice.label-->
+<!--            }-->
+<!--            const textNode = document.createTextNode(label);-->
+<!--            option.appendChild(textNode);-->
+<!--            select.appendChild(option);-->
+<!--            count++;-->
+<!--        });-->
+<!--        iTracker.WEBCAM_NAME = select.options[select.selectedIndex].innerHTML;-->
+<!--    }-->
+
+<!--    function SelectCam() {-->
+<!--        var select = document.getElementById("chooseCamSel");-->
+<!--        window.deviceId = select.value;-->
+<!--        window.WEBCAM_SETTINGS.video['deviceId'] = deviceId;-->
+<!--        //console.log(window.WEBCAM_SETTINGS);-->
+<!--        iTracker.WEBCAM_NAME = select.options[select.selectedIndex].innerHTML;-->
+<!--    }-->
+
+<!--    async function FlipCam() {-->
+<!--        arCamera.stopWebcam();-->
+<!--        window.WEBCAM_SETTINGS.video.deviceId = '';-->
+<!--        if (window.WEBCAM_SETTINGS.video.facingMode == 'user') {-->
+<!--            window.WEBCAM_SETTINGS.video.facingMode = 'environment';-->
+<!--            arCamera.setFlipped(false);-->
+<!--        } else {-->
+<!--            window.WEBCAM_SETTINGS.video.facingMode = 'user';-->
+<!--            arCamera.setFlipped(true);-->
+<!--        }-->
+<!--        window.webcamStream = await navigator.mediaDevices.getUserMedia(window.WEBCAM_SETTINGS);-->
+<!--        const video = document.querySelector("#webcam-video");-->
+<!--        video.srcObject = webcamStream;-->
+<!--        await arCamera.startWebcam(video);-->
+<!--    }-->
+
+<!--    async function IsCameraPermissionGranted() {-->
+<!--        if (!navigator.permissions || !navigator.mediaDevices) {-->
+<!--            console.log("Permissions API or mediaDevices not supported.");-->
+<!--            return false;-->
+<!--        }-->
+<!--        try {-->
+<!--            // Query the status of the camera permission-->
+<!--            const permissionStatus = await navigator.permissions.query({name: "camera"});-->
+<!--            if (permissionStatus.state === "granted") {-->
+<!--                console.log("Camera permission has already been granted.");-->
+<!--                return true;-->
+<!--            } else if (permissionStatus.state === "prompt") {-->
+<!--                console.log("Camera permission is promptable.");-->
+<!--                return false;-->
+<!--            } else {-->
+<!--                console.log("Camera permission has been denied.");-->
+<!--                return false;-->
+<!--            }-->
+<!--        } catch (error) {-->
+<!--            console.log("Error checking camera permission:", error);-->
+<!--            return false;-->
+<!--        }-->
+<!--    }-->
+
+<!--    function ShowError(error) {-->
+<!--        var errorDiv = document.getElementById("errorDiv");-->
+<!--        errorDiv.style.opacity = 1;-->
+<!--        errorDiv.style.visibility = "visible";-->
+<!--        document.getElementById("errorText").innerHTML = error;-->
+<!--    }-->
+
+<!--    function ShowScreenshot(dataUrl) {-->
+<!--        var screenshotDiv = document.getElementById("screenshotDiv");-->
+<!--        screenshotDiv.style.opacity = 1;-->
+<!--        screenshotDiv.style.visibility = "visible";-->
+<!--        document.getElementById("screenshotImg").src = dataUrl;-->
+<!--        document.getElementById("screenshotImg").style.width = "80vw";-->
+<!--        document.getElementById("screenshotImg").style.height = 80 / window.innerWidth * window.innerHeight + "vw";-->
+<!--    }-->
+
+<!--    function HideScreenshot() {-->
+<!--        var screenshotDiv = document.getElementById('screenshotDiv');-->
+<!--        screenshotDiv.style.opacity = 0;-->
+<!--        setTimeout(() => {-->
+<!--            screenshotDiv.style.visibility = 'hidden';-->
+<!--        }, 500);-->
+<!--    }-->
+
+<!--    function ShowConfirmUrl(url) {-->
+<!--        var confirmUrlDiv = document.getElementById("confirmUrlDiv");-->
+<!--        confirmUrlDiv.style.opacity = 1;-->
+<!--        confirmUrlDiv.style.visibility = "visible";-->
+<!--        window.newUrlString = url;-->
+<!--        document.getElementById("confirmUrlText").innerText = "Are you sure you want to visit " + url + "?";-->
+<!--    }-->
+
+<!--    function HideConfirmUrl() {-->
+<!--        var confirmUrlDiv = document.getElementById("confirmUrlDiv");-->
+<!--        confirmUrlDiv.style.opacity = 0;-->
+<!--        setTimeout(() => {-->
+<!--            confirmUrlDiv.style.visibility = 'hidden';-->
+<!--        }, 500);-->
+<!--    }-->
+
+<!--    window.ITRACKER_GLOBALS = {-->
+<!--        //place global settings here-->
+<!--        INTERNAL_SMOOTHFACTOR_POS: .075,-->
+<!--    }-->
+<!--</script>-->
+<!--</body>-->
+<!--</html>-->
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Unity WebGL Player | My project</title>
+    <link rel="shortcut icon" href="TemplateData/favicon.ico">
+    <link rel="stylesheet" href="TemplateData/style.css">
+    <link rel="manifest" href="manifest.webmanifest">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            letter-spacing: 0.05em;
+            font-size: max(2vw, 2vh);
+            color: white
+        }
+        button {
+            height: max(5vw, 5vh);
+            font-size: max(2vw, 2vh);
+            font-weight: bold;
+            border-radius: max(1.5vw, 1.5vh);
+            padding-left: max(5vw, 5vh);
+            padding-right: max(5vw, 5vh);
+            border: 0;
+            color: #62a7fe;
+            background: #3d3d3d;
+            transition: 0.1s;
+            user-select: none;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+        }
+        button:hover {
+            filter: brightness(1.15)
+        }
+        button:active {
+            transform: scale(0.95);
+            filter: brightness(0.85)
+        }
+        .ctaDiv {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            background: #2f2e32aa;
+            z-index: 99;
+            transition: 0.5s;
+        }
+        #startARDiv {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            display: flex; /* same center alignment */
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999; /* upar dikhane ke liye */
+        }
+
+        #startAR-logo {
+            width: 180px;
+            height: 180px;
+            background: url('TemplateData/greetingLogo.png') no-repeat center;
+            background-size: contain;
+        }
+
+        #startAR-progress-bar-empty {
+            margin-left: auto;
+            margin-right: auto;
+            width: 141px;
+            height: 18px;
+            margin-top: 10px;
+            background: url('TemplateData/progress-bar-empty-dark.png') no-repeat center;
+        }
+
+        #startAR-progress-bar-full {
+            width: 0%;
+            height: 18px;
+            margin-top: 10px;
+            background: url('TemplateData/progress-bar-full-dark.png') no-repeat center;
+        }
+
+
+
+
+    </style>
+</head>
+<body>
+
+<!-- START AR DIV -->
+<div id="startARDiv">
+    <div id="startAR-logo"></div>
+    <div id="startAR-progress-bar-empty">
+        <div id="startAR-progress-bar-full"></div>
+    </div>
+</div>
+
+
+<!-- Hidden dummy button to prevent null reference -->
+<button id="startARButton" style="display:none"></button>
+
+<!--IMAGETARGETS-->
+<imagetarget id='bear' src='targets/bear.png'></imagetarget>
+<imagetarget id='bfly' src='targets/bfly.png'></imagetarget>
+<imagetarget id='flower' src='targets/flower.png'></imagetarget>
+<imagetarget id='lady' src='targets/lady.png'></imagetarget>
+<imagetarget id='reel' src='targets/reel.png'></imagetarget>
+<imagetarget id='rmn' src='targets/rmn.png'></imagetarget>
+
+<imagetarget id="frontCard" src=""></imagetarget>
+<imagetarget id="rightCard" src=""></imagetarget>
+
+<script>
+
+    function extractUserIdFromUrl() {
+        const params = new URLSearchParams(window.location.search);
+        return params.get("templateId") || null;
+    }
+    (async function () {
+        try {
+
+
+            // 1. Get the user ID from URL
+            //const userId = "68a2c2824795a3d2a447e50f";
+            const userId = extractUserIdFromUrl();
+            // const pathParts = window.location.pathname.split('/');
+            // const userId = pathParts[pathParts.length - 1];
+            console.log("User ID:", userId);
+            // 2. Fetch AR data from API
+            //const apiUrl = `https://greetings-card-apis.tecshield.net/api/user/ar-experience/get/${userId}`;
+            const apiUrl = `https://api.incardible.com.au/api/user/ar-experience/get/${userId}`;
+            const res = await fetch(apiUrl, { cache: "no-cache" });
+            if (!res.ok) throw new Error("Failed to fetch AR experience data");
+            const json = await res.json();
+            console.log("Fetched AR data:", json);
+            // 3. Validate required data
+            const cardFront = json.data?.cardId?.frontDesign;
+            const rightImage = json.data?.arTemplateData?.rightImageUrl;
+            if (!cardFront) throw new Error("frontDesign missing from cardId");
+            if (!rightImage) throw new Error("rightImageUrl missing from arTemplateData");
+            // 4. Update AR image target sources
+            document.getElementById("frontCard").setAttribute("src", cardFront);
+            document.getElementById("rightCard").setAttribute("src", rightImage);
+
+
+            // 6. Initialize AR
+            await initialize();
+
+            // 7. Auto start AR (simulate button click)
+            StartAR();
+
+        } catch (err) {
+            console.error("Error initializing AR experience:", err);
+            alert("Failed to load AR experience. Please try again.");
+        }
+        // Helper to load scripts dynamically
+        function loadScript(src) {
+            return new Promise((resolve, reject) => {
+                const script = document.createElement("script");
+                script.src = src;
+                script.onload = resolve;
+                script.onerror = reject;
+                document.body.appendChild(script);
+            });
+        }
+    })();
+</script>
+<video id="webcam-video" muted autoplay playsinline style="width:1px;position:absolute"></video>
+<canvas id="video-canvas" style="width:100%; height:100%; object-fit:cover; position:absolute"></canvas>
+
+
+<div id="screenshotDiv" style="visibility: hidden; opacity: 0;" class="ctaDiv">
+    <div style="position:relative; background-color:#2c2b2f; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.25); border-radius: max(1.5vh, 1.5vw); text-align: center; overflow: hidden">
+        <img id="screenshotImg" src="" alt="screenshot" style="width:80vw; height:80vh">
+        <button onclick="HideScreenshot()"
+                style="position:absolute;right: max(1vw, 1vh);top: max(1vw, 1vh);background: #3d3d3d77; width: max(4vw, 4vh); height: max(4vw, 4vh);padding: 0;border-radius: 100vw; display: flex;align-items: center;justify-content: center;">
+            <svg width="max(2.5vw,2.5vh)" height="max(2.5vw,2.5vh)" viewBox="0 0 24 24">
+                <line x1="3" y1="3" x2="21" y2="21" stroke="#999" stroke-width="2.5"></line>
+                <line x1="3" y1="21" x2="21" y2="3" stroke="#999" stroke-width="2.5"></line>
+            </svg>
+        </button>
+        <p style="font-size: max(1vw, 1vh); color: #fff6">Press and hold to save or share this screenshot</p>
+    </div>
+</div>
+<div id="confirmUrlDiv" style="visibility: hidden; opacity: 0;" class="ctaDiv">
+    <div style="position:relative; background-color:#2c2b2f; padding:10px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.25); width: min(80vw,80vh); display:flex; flex-direction: column; align-items: center; border-radius: 1.5vh;
+">
+        <p id="confirmUrlText" style="text-align: center; width:80%; overflow: hidden; text-overflow: ellipsis;">Are you
+            sure you want to visit url.com?</p>
+        <div style="width: 100%">
+            <button style="width: 100%; margin-bottom: 15px;"
+                    onclick="window.open(newUrlString, '_blank').focus(); HideConfirmUrl()">VISIT SITE
+            </button>
+            <button style="width: 100%" onclick="HideConfirmUrl()">GO BACK</button>
+        </div>
+    </div>
+</div>
+<div id="errorDiv" class="ctaDiv" style="visibility: hidden; opacity: 0; background-color:#2c2b2f">
+    <p id="errorText" style="text-align: center; width:60vw; color:#7f3f3f; font-size: max(3vw, 3vh);"></p>
+</div>
+<div id="unity-container">
+    <canvas id="unity-canvas" width=1920 height=1080 tabindex="-1"></canvas>
+    <div id="unity-loading-bar">
+        <div id="unity-logo"></div>
+        <div id="unity-progress-bar-empty">
+            <div id="unity-progress-bar-full"></div>
+        </div>
+    </div>
+    <div id="unity-warning"></div>
+</div>
+<script src="arcamera.js" type="text/javascript"></script>
+<script src="itracker.js" type="text/javascript"></script>
+<script>
+    // Disable double-tap to zoom
+    document.addEventListener('touchstart', function (event) {
+        if (event.touches.length > 1) {
+            event.preventDefault();
+        }
+    }, {passive: false});
+    // Disable pinch to zoom
+    document.addEventListener('gesturestart', function (event) {
+        event.preventDefault();
+    });
+    async function initialize() {
+        var unityCanvas = document.querySelector("#unity-canvas");
+        var videoCanvas = document.querySelector("#video-canvas");
+        window.arCamera = new ARCamera(unityCanvas, videoCanvas);
+        window.iTracker = new ImageTracker(arCamera);
+        try {
+            await window.iTracker.initialize("./opencv.js");
+            console.log("ImageTracker initialized!");
+        } catch (error) {
+            console.error("Failed to initialize ImageTracker. Are you missing opencv.js? ", error);
+            ShowError("Failed to initialize the experience.");
+            return;
+        }
+        await LoadWebcams();
+        window.permissionsGranted = IsCameraPermissionGranted();
+    }
+
+    // initialize();
+    window.addEventListener("load", function () {
+        if ("serviceWorker" in navigator) {
+            navigator.serviceWorker.register("ServiceWorker.js");
+        }
+    });
+    var instanceObj;
+    var container = document.querySelector("#unity-container");
+    var canvas = document.querySelector("#unity-canvas");
+    var loadingBar = document.querySelector("#unity-loading-bar");
+    var progressBarFull = document.querySelector("#unity-progress-bar-full");
+    var warningBanner = document.querySelector("#unity-warning");
+    // Shows a temporary message banner/ribbon for a few seconds, or
+    // a permanent error message on top of the canvas if type=='error'.
+    // If type=='warning', a yellow highlight color is used.
+    // Modify or remove this function to customize the visually presented
+    // way that non-critical warnings and error messages are presented to the
+    // user.
+    function unityShowBanner(msg, type) {
+        function updateBannerVisibility() {
+            warningBanner.style.display = warningBanner.children.length ? 'block' : 'none';
+        }
+        var div = document.createElement('div');
+        div.innerHTML = msg;
+        warningBanner.appendChild(div);
+        if (type == 'error') div.style = 'background: red; padding: 10px;';
+        else {
+            if (type == 'warning') div.style = 'background: yellow; padding: 10px;';
+            setTimeout(function () {
+                warningBanner.removeChild(div);
+                updateBannerVisibility();
+            }, 5000);
+        }
+        updateBannerVisibility();
+    }
+    // function extractUserIdFromUrl() {
+    //     const pathParts = window.location.pathname.split("/").filter(Boolean);
+    //     // Get the last segment (assumed to be the ID)
+    //     const idFromPath = pathParts[pathParts.length - 1];
+    //     return idFromPath || null;
+    // }
+
+    function StartAR() {
+        var startARDiv = document.querySelector("#startARDiv");
+        startARDiv.style.opacity = 0;
+        setTimeout(() => {
+            startARDiv.style.visibility = "hidden";
+        }, 500);
+        var buildUrl = "Build";
+        var loaderUrl = buildUrl + "/Ar Build.loader.js";
+        var config = {
+            dataUrl: buildUrl + "/Ar Build.data",
+            frameworkUrl: buildUrl + "/Ar Build.framework.js",
+            codeUrl: buildUrl + "/Ar Build.wasm",
+            streamingAssetsUrl: "StreamingAssets",
+            companyName: "DefaultCompany",
+            productName: "My project",
+            productVersion: "1.0.0",
+            showBanner: unityShowBanner,
+        };
+        // By default Unity keeps WebGL canvas render target size matched with
+        // the DOM size of the canvas element (scaled by window.devicePixelRatio)
+        // Set this to false if you want to decouple this synchronization from
+        // happening inside the engine, and you would instead like to size up
+        // the canvas DOM size and WebGL render target sizes yourself.
+        // config.matchWebGLToCanvasSize = false;
+        if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
+            // Mobile device style: fill the whole browser client area with the game canvas:
+            var meta = document.createElement('meta');
+            meta.name = 'viewport';
+            meta.content = 'width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, shrink-to-fit=yes';
+            document.getElementsByTagName('head')[0].appendChild(meta);
+        }
+        loadingBar.style.display = "block";
+        const userArExperienceId = extractUserIdFromUrl();
+        var script = document.createElement("script");
+        script.src = loaderUrl;
+        script.onload = () => {
+            createUnityInstance(canvas, config, (progress) => {
+                progressBarFull.style.width = 100 * progress + "%";
+            }).then((unityInstance) => {
+                loadingBar.style.display = "none";
+                instanceObj = unityInstance;
+                window.unityInstance = unityInstance;
+                console.log("userArExperienceId------------------------", userArExperienceId)
+                if (userArExperienceId) {
+                    console.log("userArExperienceId-----------------------after-", userArExperienceId)
+                    const apiUrl = `https://api.incardible.com.au/api/user/ar-experience/get/${userArExperienceId}`;
+                    console.log("apiUrl", apiUrl)
+                    fetch(apiUrl, {
+                        method: 'GET',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                    }).then(response => response.json())
+                        .then(data => {
+                            console.log("data in ar experience-------", data);
+                            unityInstance.SendMessage('ArJsonData', 'userArExperience', JSON.stringify(data));
+                        })
+                        .catch(error => {
+                            console.error('Error:', error);
+                            unityInstance.SendMessage('ArJsonData', 'userArExperience', JSON.stringify({}));
+                        });
+                } else {
+                    unityInstance.SendMessage('ArJsonData', 'userArExperience', JSON.stringify({}));
+                }
+                if (window.permissionsGranted) {
+                    RequestWebcam();
+                }
+            }).catch((message) => {
+                alert(message);
+            });
+        };
+        document.body.appendChild(script);
+    }
+    //Set Facing Mode here ('environment', 'user', '')
+    window.unityFacingMode = "environment"
+    window.WEBCAM_SETTINGS = {
+        video: {
+            facingMode: unityFacingMode,
+        },
+        audio: false
+    };
+
+
+    function forceRedraw() {
+        const canvas = document.querySelector("#unity-canvas");
+        if (canvas) {
+            canvas.focus();
+            canvas.dispatchEvent(new Event("mousedown"));
+        }
+    }
+    window.requestingForPermissions = false;
+    async function RequestWebcam() {
+        window.requestingForPermissions = true;
+        try {
+            window.webcamStream = await navigator.mediaDevices.getUserMedia(window.WEBCAM_SETTINGS);
+            console.log("Webcam access granted");
+            requestingForPermissions = false;
+            // Immediately stop the stream to release the camera
+
+            StopWebcam();
+        } catch (err) {
+            //user denied camera permission - show error panel
+            console.error("getUserMedia error - ", err);
+            ShowError("Failed to start the experience. Camera permission was denied");
+            window.requestingForPermissions = false;
+        }
+    }
+    forceRedraw();
+    function StopWebcam() {
+        console.log("stopping camera");
+        window.webcamStream.getTracks().forEach(track => track.stop());
+    }
+    async function StartWebcam() {
+        console.log("StartWebcam")
+        window.webcamStream = await navigator.mediaDevices.getUserMedia(window.WEBCAM_SETTINGS);
+        while (window.requestingForPermissions) {
+            // Wait until requestingForPermissions becomes true.
+            console.log("Waiting for permissions...");
+            await new Promise(resolve => setTimeout(resolve, 100)); // Adjust the delay time as needed.
+        }
+        console.log("Got Permissions");
+        if (window.webcamStream) {
+            const video = document.querySelector("#webcam-video");
+            video.srcObject = webcamStream;
+            try {
+                await arCamera.startWebcam(video);
+                console.log("Webcam started successfully");
+                window.unityInstance.SendMessage('ARCamera', 'OnStartWebcamSuccess');
+                //replace background transparency
+                const canvas = document.querySelector("#unity-canvas");
+                let bgColor = window.getComputedStyle(canvas).backgroundColor;
+                canvas.style.background = bgColor.replace("rgb", "rgba").replace(")", ", 0)");
+            } catch (err) {
+                console.error("Webcam failed to start - ", err);
+                window.unityInstance.SendMessage('ARCamera', 'OnStartWebcamFail');
+            }
+        } else {
+            console.error("Webcam failed to start - permission not yet granted");
+            window.unityInstance.SendMessage('ARCamera', 'OnStartWebcamFail');
+        }
+    }
+    async function LoadWebcams() {
+        let camDevices = [];
+        // let backCams = [];
+        let devices = await navigator.mediaDevices.enumerateDevices();
+        var ctr = 0;
+        devices.forEach(mediaDevice => {
+            if (mediaDevice.kind === 'videoinput') {
+                if (window.unityFacingMode == 'environment' && !mediaDevice.label.includes('facing front')) {
+                    //back cam only
+                    camDevices.push(mediaDevice);
+                } else if (window.unityFacingMode == 'user' && mediaDevice.label.includes('facing front')) {
+                    //front cam only
+                    camDevices.push(mediaDevice);
+                } else {
+                    //back and front
+                    camDevices.push(mediaDevice);
+                }
+                ctr++;
+            }
+        });
+        var select = document.getElementById("chooseCamSel");
+        if (select) {
+            select.style.visibility = "visible";
+            var count = 0;
+            // reverse array and populate <select> options
+            camDevices = camDevices.reverse();
+            camDevices.forEach(mediaDevice => {
+                const option = document.createElement('option');
+                option.value = mediaDevice.deviceId;
+                let label = `Camera ${count}`;
+                if (mediaDevice.label) {
+                    label = mediaDevice.label;
+                }
+                option.appendChild(document.createTextNode(label));
+                select.appendChild(option);
+                count++;
+            });
+            iTracker.WEBCAM_NAME = select.options[select.selectedIndex].innerHTML;
+        }
+
+    }
+    function SelectCam() {
+        var select = document.getElementById("chooseCamSel");
+        window.deviceId = select.value;
+        window.WEBCAM_SETTINGS.video['deviceId'] = deviceId;
+        //console.log(window.WEBCAM_SETTINGS);
+        iTracker.WEBCAM_NAME = select.options[select.selectedIndex].innerHTML;
+    }
+    async function FlipCam() {
+        arCamera.stopWebcam();
+        window.WEBCAM_SETTINGS.video.deviceId = '';
+        if (window.WEBCAM_SETTINGS.video.facingMode == 'user') {
+            window.WEBCAM_SETTINGS.video.facingMode = 'environment';
+            arCamera.setFlipped(false);
+        } else {
+            window.WEBCAM_SETTINGS.video.facingMode = 'user';
+            arCamera.setFlipped(true);
+        }
+        window.webcamStream = await navigator.mediaDevices.getUserMedia(window.WEBCAM_SETTINGS);
+        const video = document.querySelector("#webcam-video");
+        video.srcObject = webcamStream;
+        await arCamera.startWebcam(video);
+    }
+    async function IsCameraPermissionGranted() {
+        if (!navigator.permissions || !navigator.mediaDevices) {
+            console.log("Permissions API or mediaDevices not supported.");
+            return false;
+        }
+        try {
+            // Query the status of the camera permission
+            const permissionStatus = await navigator.permissions.query({name: "camera"});
+            if (permissionStatus.state === "granted") {
+                console.log("Camera permission has already been granted.");
+                return true;
+            } else if (permissionStatus.state === "prompt") {
+                console.log("Camera permission is promptable.");
+                return false;
+            } else {
+                console.log("Camera permission has been denied.");
+                return false;
+            }
+        } catch (error) {
+            console.log("Error checking camera permission:", error);
+            return false;
+        }
+    }
+    function ShowError(error) {
+        var errorDiv = document.getElementById("errorDiv");
+        errorDiv.style.opacity = 1;
+        errorDiv.style.visibility = "visible";
+        document.getElementById("errorText").innerHTML = error;
+    }
+    function ShowScreenshot(dataUrl) {
+        var screenshotDiv = document.getElementById("screenshotDiv");
+        screenshotDiv.style.opacity = 1;
+        screenshotDiv.style.visibility = "visible";
+        document.getElementById("screenshotImg").src = dataUrl;
+        document.getElementById("screenshotImg").style.width = "80vw";
+        document.getElementById("screenshotImg").style.height = 80 / window.innerWidth * window.innerHeight + "vw";
+    }
+    function HideScreenshot() {
+        var screenshotDiv = document.getElementById('screenshotDiv');
+        screenshotDiv.style.opacity = 0;
+        setTimeout(() => {
+            screenshotDiv.style.visibility = 'hidden';
+        }, 500);
+    }
+    function ShowConfirmUrl(url) {
+        var confirmUrlDiv = document.getElementById("confirmUrlDiv");
+        confirmUrlDiv.style.opacity = 1;
+        confirmUrlDiv.style.visibility = "visible";
+        window.newUrlString = url;
+        document.getElementById("confirmUrlText").innerText = "Are you sure you want to visit " + url + "?";
+    }
+    function HideConfirmUrl() {
+        var confirmUrlDiv = document.getElementById("confirmUrlDiv");
+        confirmUrlDiv.style.opacity = 0;
+        setTimeout(() => {
+            confirmUrlDiv.style.visibility = 'hidden';
+        }, 500);
+    }
+    window.ITRACKER_GLOBALS = {
+        //place global settings here
+        INTERNAL_SMOOTHFACTOR_POS: .075,
+    }
+</script>
+</body>
+</html>
