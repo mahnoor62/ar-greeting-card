@@ -4,45 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a8563989-26f0-4395-b309-f4cb481adbf3" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Build/Ar Build.data" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Build/Ar Build.framework.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Build/Ar Build.loader.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Build/Ar Build.wasm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ServiceWorker.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/StreamingAssets/Gif1.mp4" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/StreamingAssets/Gif2.mp4" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/StreamingAssets/Gif3.mp4" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/StreamingAssets/Gif4.mp4" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/StreamingAssets/Gif5.mp4" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/StreamingAssets/aa/AddressablesLink/link.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/StreamingAssets/aa/WebGL/92bc95481a345a29d50fe9c80b6f13bd_monoscripts_aaad8272e18075424881539e1779a71a.bundle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/StreamingAssets/aa/WebGL/ardebugmenu_assets_all_28de060712115c52e7ab03d1f797cf17.bundle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/StreamingAssets/aa/WebGL/defaultlocalgroup_assets_all_c1dc60c5b71bfc791523142539422f2f.bundle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/StreamingAssets/aa/catalog.bin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/StreamingAssets/aa/catalog.hash" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/StreamingAssets/aa/settings.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TemplateData/favicon.ico" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TemplateData/fullscreen-button.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TemplateData/progress-bar-empty-dark.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TemplateData/progress-bar-empty-light.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TemplateData/progress-bar-full-dark.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TemplateData/progress-bar-full-light.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TemplateData/style.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TemplateData/unity-logo-dark.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TemplateData/unity-logo-light.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TemplateData/webgl-logo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/arcamera.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/itracker.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/opencv.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/targets/bear.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/targets/bfly.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/targets/flower.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/targets/lady.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/targets/reel.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/targets/rmn.png" afterDir="false" />
-    </list>
+    <list default="true" id="a8563989-26f0-4395-b309-f4cb481adbf3" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -85,6 +47,7 @@
       <workItem from="1757693534748" duration="580000" />
       <workItem from="1759312183083" duration="2244000" />
       <workItem from="1759317231000" duration="456000" />
+      <workItem from="1759379422838" duration="594000" />
     </task>
     <servers />
   </component>
