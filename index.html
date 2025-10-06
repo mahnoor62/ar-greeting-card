@@ -1,4 +1,4 @@
-<!--&lt;!&ndash;<!DOCTYPE html>&ndash;&gt;-->
+﻿<!--&lt;!&ndash;<!DOCTYPE html>&ndash;&gt;-->
 <!--&lt;!&ndash;<html lang="en-us">&ndash;&gt;-->
 <!--&lt;!&ndash;<head>&ndash;&gt;-->
 <!--&lt;!&ndash;    <meta charset="utf-8">&ndash;&gt;-->
@@ -1406,7 +1406,6 @@
             console.log("Webcam access granted");
             requestingForPermissions = false;
             // Immediately stop the stream to release the camera
-
             StopWebcam();
         } catch (err) {
             //user denied camera permission - show error panel
@@ -1414,7 +1413,7 @@
             ShowError("Failed to start the experience. Camera permission was denied");
             window.requestingForPermissions = false;
         }
-        forceRedraw();  // i shifted function from outside to here
+        forceRedraw();  
     }
     function StopWebcam() {
         console.log("stopping camera");
@@ -1440,6 +1439,25 @@
                 const canvas = document.querySelector("#unity-canvas");
                 let bgColor = window.getComputedStyle(canvas).backgroundColor;
                 canvas.style.background = bgColor.replace("rgb", "rgba").replace(")", ", 0)");
+
+                // added this block
+            if (canvas) {
+                // simulate focus
+                canvas.focus();
+
+                // simulate mouse down + up
+                const down = new MouseEvent("mousedown", { bubbles: true, cancelable: true });
+                const up = new MouseEvent("mouseup", { bubbles: true, cancelable: true });
+                canvas.dispatchEvent(down);
+                canvas.dispatchEvent(up);
+
+                // simulate a click event
+                const click = new MouseEvent("click", { bubbles: true, cancelable: true });
+                canvas.dispatchEvent(click);
+
+                console.log("✅ Dummy click dispatched on Unity canvas");
+            }
+
             } catch (err) {
                 console.error("Webcam failed to start - ", err);
                 window.unityInstance.SendMessage('ARCamera', 'OnStartWebcamFail');
@@ -1558,7 +1576,7 @@
     }
     function ShowConfirmUrl(url) {
         var confirmUrlDiv = document.getElementById("confirmUrlDiv");
-        confirmUrlDiv.style.opacity = 1;
+        confirmUrlDiv.style.opacity = 1;    
         confirmUrlDiv.style.visibility = "visible";
         window.newUrlString = url;
         document.getElementById("confirmUrlText").innerText = "Are you sure you want to visit " + url + "?";
